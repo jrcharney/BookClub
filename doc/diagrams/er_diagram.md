@@ -1,5 +1,7 @@
 # Entity Relationship Diagram
 
+> **DEPRICATED** This document has been replaced with other documents. Eventually, this document will be removed.
+
 ## Abbreviations
 
 In an Entity Relationship Diagram we can indicate if a column is a primary key (`PK`) for foreign key (`FK`). However, due to the limitation of Mermaid we can't indicate the size of `VARCHAR` or `DECIMAL` values.
