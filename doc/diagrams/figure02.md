@@ -20,6 +20,9 @@ Tags can be assigned to books and authors, but categories can only be assigned t
 
 ## ER Diagram
 
+> NOTE: Thanks to Nathan Sebhastian for [explaining how the timestamps work in sequelize](https://sebhastian.com/sequelize-timestamps/).
+> Thanks to him, we now can use `timestamps: true`, `createdAt: true`, and `updatedAt: true` to add timestamps to our data objects.
+
 ```mermaid
 erDiagram
     user {
@@ -28,21 +31,24 @@ erDiagram
         VARCHAR email "user email; NN U"
         PASSWORD password "NN"
         BOOLEAN verified "User completed data verification"
-        DATE record_created "When was this user created"
+        DATETIME createdAt "When was this record created"
+        DATETIME updatedAt "When was this record updated"
     }
 
     category {
         INT id PK "Category ID; NN AI"
         VARCHAR name "A unique category name; NN U"
         VARCHAR description "A short description about this category"
-        DATE record_created "When was this category created"
+        DATETIME createdAt "When was this record created"
+        DATETIME updatedAt "When was this record updated"
     }
 
     tag {
         INT id PK "Tag ID; NN AI"
         VARCHAR name "A unique tag name; NN U"
         VARCHAR description "A short description about this tag"
-        DATE record_created "When was this tag created"
+        DATETIME createdAt "When was this record created"
+        DATETIME updatedAt "When was this record updated"
     }
 
 
@@ -54,7 +60,8 @@ erDiagram
         DATE dob "Date of birth"
         DATE dod "Date of death"
         TEXT author_info "A short biography of the author"
-        DATE record_created "When was this author record created"
+        DATETIME createdAt "When was this record created"
+        DATETIME updatedAt "When was this record updated"
     }
 
     author_tag {
@@ -73,7 +80,8 @@ erDiagram
         YEAR pub_year "Year the book was published"
         TEXT description "Short description"
         INT age_group "Set age group for readers"
-        DATE record_created "When was this book record created"
+        DATETIME createdAt "When was this record created"
+        DATETIME updatedAt "When was this record updated"
     }
 
     book_author {
