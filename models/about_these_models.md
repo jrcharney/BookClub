@@ -10,7 +10,7 @@ I (Jason) took in a tall order here. Note that any model that is empty will even
 
 ## Phase I: The Basics
 
-- [ ] **User**
+- [x] **User**
   - [ ] TODO: We should think about an age verification table so that we can do that when users sign up.
 - [ ] **Book**
 - [ ] **Author**
