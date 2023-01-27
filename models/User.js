@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection';
+import sequelize from '../config/connections';
 import { compareSync, hash } from 'bcrypt';
 
 
