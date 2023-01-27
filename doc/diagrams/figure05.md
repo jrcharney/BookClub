@@ -154,12 +154,18 @@ erDiagram
         INT id PK "Message Board IDl NN AI"
         VARCHAR name "NN"
         VARCHAR about ""
+        INT order "Arrange the boards in order; NN U"
         INT created_by FK "Who created this board; REF club_member(id)"
         DATE board_created "NN"
         BOOLEAN is_public "Is this board public?"
         BOOLEAN is_closed "Is this board closed?"
-        INT closed_by "Who closed this board?; REF club_moderator(id)"
+        BOOLEAN is_sticky "Keep this board on top"
+        INT closed_by "Who closed this board?; REF club_administrator(id)"
         DATE closed_when "When was this board closed?"
+        BOOLEAN is_hidden "Is this board hidden?"
+        INT hidden_by "Who hid this topic?; REF club_administrator(id)"
+        DATE hidden_when "When was this board hidden?"
+        VARCHAR hidden_why "Why was this board hidden?"
     }
     club_board_moderator ||--|{ club_board : "Each board has at least one moderator"
     club ||--|{ club_board : "Clubs contain boards"
@@ -172,14 +178,19 @@ erDiagram
         BOOLEAN has_poll "Does this topic have a poll?"
         BOOLEAN is_public "Is this topic public?"
         BOOLEAN is_closed "Is this topic closed?"
+        BOOLEAN is_sticky "Keep this topic on top"
         INT closed_by "Who closed this topic?; REF club_moderator(id)"
         DATE closed_when "When was this topic closed?"
+        VARCHAR closed_why "Why was this topic closed?"
+        BOOLEAN is_hidden "Is this topic hidden?"
+        INT hidden_by "Who hid this topic?; REF club_moderator(id)"
+        DATE hidden_when "When was this topic hidden?"
+        VARCHAR hidden_why "Why was this topic hidden?"
         INT board_id "REF club_board(id)"
    }
     club_board ||--o{ club_topic : "Boards contain topics"
     club_moderator ||--|{ club_topic : "Can moderate topic"
     club_member ||--|{ club_topic : "creates a topic"
-
 
     club_post {
         INT id PK "(overall) Post ID; NN AI"
@@ -188,6 +199,11 @@ erDiagram
         TEXT post_content "NN"
         INT post_number "Track the order of posts; NN"
         BOOLEAN is_public "Is this post public?"
+        BOOLEAN is_sticky "Keep this post on top"
+        BOOLEAN is_hidden "Is this post hidden by a moderator?"
+        INT hidden_by "Who hid this post?; REF club_moderator(id)"
+        DATE hidden_when "When was this post hidden?"
+        VARCHAR hidden_why "Why was this post hidden?"
     }
     club_topic ||--o{ club_post : "contains"
     club_member ||--|{club_post : "writes"
@@ -202,7 +218,7 @@ erDiagram
 
     club_poll {
         INT id PK "Poll ID; NN AI"
-        INT topic_id FK "club_topic(id)"
+        INT topic_id FK "REF club_topic(id)"
         VARCHAR question "Poll Question; NN"
         INT created_by FK "Who created this poll; REF user(id)"
         DATE poll_created "NN"
