@@ -63,7 +63,7 @@ Author.init(
         updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
         freezeTableName: true,
         underscored: true,
-        modelName: 'Author'
+        modelName: 'author'
     }
 );
 

@@ -18,14 +18,14 @@ BookAuthor.init(
         book_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Book',
+                model: 'book',
                 key: 'id'
             }
         },
         author_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Author',
+                model: 'buthor',
                 key: 'id'
             }
         }
@@ -35,7 +35,7 @@ BookAuthor.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'BookAuthor'
+        modelName: 'book_author'
     }
 );
 
