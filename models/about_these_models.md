@@ -12,8 +12,8 @@ I (Jason) took in a tall order here. Note that any model that is empty will even
 
 - [x] **User**
   - [ ] TODO: We should think about an age verification table so that we can do that when users sign up.
-- [ ] **Book**
-- [ ] **Author**
+- [x] **Book**
+- [x] **Author**
 - [ ] **Category**
 - [ ] **Tag**
 - [ ] UserProfile
@@ -31,7 +31,7 @@ I (Jason) took in a tall order here. Note that any model that is empty will even
 - [ ] Link Tables (all those tables that link all the primary tables together)
   - Some of these might be moved into Phase I.
   - [ ] AuthorTag 🔗
-  - [ ] BookAuthor 🔗
+  - [x] BookAuthor 🔗
   - [ ] BookTag 🔗
   - [ ] BookCategory 🔗
   - [ ] 

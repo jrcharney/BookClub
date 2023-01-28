@@ -1,3 +1,7 @@
+/**
+ * @file model/Author.js
+ * @desc Model for the Author class
+ */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 
