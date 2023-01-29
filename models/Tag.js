@@ -1,6 +1,8 @@
 /**
  * @file model/Tag.js
  * @desc Model for the Tag class
+ * @Note Tags are almost EVERYWHERE. Think of them as keywords to attach to objects when searching.
+ * @TODO Should we apply a tag search when querying objects?
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';

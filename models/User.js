@@ -1,3 +1,9 @@
+/**
+ * @file models/User.js
+ * @desc Create a User who will use this website
+ * @TODO A UserProfile and UserSettings object should be created once a User has verified their Email
+ * @TODO Should we ask the user for their age before signing up?
+ */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 import { compareSync, hash } from 'bcrypt';

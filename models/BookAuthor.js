@@ -1,6 +1,6 @@
 /**
  * @file models/BookAuthor.js
- * @desc Link Authors with Books
+ * @desc Link Authors with Books. A book has at least one author but can have more than one author. Authors can write many books, so this table will be used to build an author's bibliography.
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';

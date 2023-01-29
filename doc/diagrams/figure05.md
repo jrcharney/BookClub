@@ -1,5 +1,7 @@
 # Clubs
 
+> TODO: Figure 3 was updated. Make sure that this diagram reflects any changes made.
+
 ```mermaid
 erDiagram
     user {
@@ -64,6 +66,8 @@ erDiagram
 ```
 
 ## Club Membership
+
+> TODO: Figure 3 was updated, makes sure that this diagram reflects any changes made.
 
 ```mermaid
 erDiagram

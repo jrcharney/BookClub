@@ -68,7 +68,6 @@ erDiagram
         INT id PK "User Book List ID; NN AI"
         INT user_id FK "REF user(id)"
         INT book_list_id FK "REF book_list(id)"
-        BOOLEAN is_public "Is this list public?"
         DATETIME createdAt "When was this record created"
         DATETIME updatedAt "When was this record updated"
     }

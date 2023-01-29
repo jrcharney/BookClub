@@ -1,5 +1,5 @@
 /**
- * @file models/Category.js
+ * @file models/BookCategory.js
  * @desc Link Categories with Books
  */
 import { Model, DataTypes } from 'sequelize';
