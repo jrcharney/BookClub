@@ -8,6 +8,46 @@ import sequelize from '../config/connection.js';
 
 class Club extends Model {}
 
-Club.init();
+Club.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        club_name: {                   // First Name
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                max: 128                // Limit the length of the first name
+            }
+        },
+        created_by : {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        about: {                  // Author information. Write something about this person.
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                max: 500            // Limit description to 500 characters
+            }                // TODO: Do we need a validator for this?
+        }
+    },
+    {
+        sequelize,
+        timestamps: true,   // Enable timestamp fields. (I was hoping to do this anyway)
+        createdAt: true,    // Creates a createdAt field that will set a timestamp on record creation
+        updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'author'
+    }
+);
 
 export default Club;
