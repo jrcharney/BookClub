@@ -25,7 +25,7 @@ BookAuthor.init(
         author_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'buthor',
+                model: 'author',
                 key: 'id'
             }
         }

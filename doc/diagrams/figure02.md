@@ -173,4 +173,10 @@ erDiagram
     user   ||--o{ user_favorite_tag    : "Has a favorite tag"
     user_favorite_tag    }o--||  tag  : "Is of user interest"
 
+    category_echelon {
+        INT id PK "Fav. Tag ID; NN AI"
+        int parent_category_id FK "REF category(id)"
+        int child_category_id FK "REF category(id)"
+    }
+    category_echelon ||--o{ category: "parent categories have child categories"
 ```
