@@ -7,6 +7,36 @@ import sequelize from '../config/connection.js';
 
 class ClubTag extends Model {}
 
-ClubTag.init();
+ClubTag.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        club_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'club',
+                key: 'id'
+            }
+        },
+        tag_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'tag',
+                key: 'id'
+            }
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'club_tag'
+    }
+);
 
 export default ClubTag;
