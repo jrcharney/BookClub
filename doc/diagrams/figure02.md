@@ -102,23 +102,23 @@ erDiagram
         INT category_id FK "REF category(id)"
     }
 
-    user_favorite_books {
+    user_favorite_book {
         INT id PK "Fav. Book ID; NN AI"
         INT user_id FK "REF user(id)"
         INT book_id FK "REF book(id)"
         
     }
 
-    user_favorite_authors {
+    user_favorite_author {
         INT id PK "Fav. Author ID; NN AI"
         INT user_id FK "REF user(id)"
         INT author_id FK "REF author(id)"
     }
 
-    user ||--o{ user_favorite_books : "User has favorite books"
-    user_favorite_books }o--|| book : "A book could be have many fans"
-    user ||--o{ user_favorite_authors : "User has favorite authors"
-    user_favorite_authors }o--|| author : "An author could have many fans"
+    user ||--o{ user_favorite_book : "User has favorite books"
+    user_favorite_book }o--|| book : "A book could be have many fans"
+    user ||--o{ user_favorite_author : "User has favorite authors"
+    user_favorite_author }o--|| author : "An author could have many fans"
     book ||--o{ book_author : "A book could be written by many authors"
     author ||--o{ book_author : "An author could write many books"
 

@@ -6,7 +6,7 @@
  */
 
 // To organize this better, let's export or classes in groups and indicate how many classes are in that group.
-// The current count of classes is 33!
+// The current count of classes is 37.
 
 // Basic Items (5)
 import User from './User.js';
@@ -55,6 +55,13 @@ import UserBookList from './UserBookList.js';
 import Family from './Family.js';
 import FamilyUser from './FamilyUser.js';
 
+// User Favorites (4)
+import UserFavoriteAuthor from './UserFavoriteAuthor.js';
+import UserFavoriteBook from './UserFavoriteBook.js';
+import UserFavoriteClub from './UserFavoriteClub.js';
+import UserFavoriteTag from './UserFavoriteTag.js';
+// TODO: UserFavoriteCategory?
+
 export default { 
     User, Book, Author, Tag, Category, 
     BookAuthor , BookTag, BookCategory, AuthorTag, CategoryEchelon,
@@ -65,5 +72,6 @@ export default {
     Club, ClubTag, ClubMember, BookClub, AuthorClub,
     ClubList, ClubListItem, ClubListTag,
     ClubBookList, ClubBookListItem,
-    Family, FamilyUser
+    Family, FamilyUser,
+    UserFavoriteAuthor, UserFavoriteBook, UserFavoriteClub, UserFavoriteTag
 }
