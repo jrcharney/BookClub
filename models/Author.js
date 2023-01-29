@@ -1,6 +1,7 @@
 /**
  * @file model/Author.js
  * @desc Model for the Author class
+ * @TODO Adjust the lenghts on first, last, and pen name fields.
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
@@ -20,6 +21,7 @@ Author.init(
             allowNull: false,
             validate: {
                 notEmpty: true,
+                max: 128                // Limit the length of the first name
             }
         },
         last_name: {                    // Last Name
@@ -27,11 +29,13 @@ Author.init(
             allowNull: false,
             validate: {
                 notEmpty: true,
+                max: 128                // Limit the length of the last name
             }
         },
         pen_name: {                     // Nom de plume. e.g. what Mark Twain was for Samuel L. Clemens.
             type: DataTypes.STRING,
             allowNull: true,
+            max: 128,                   // Limit the lengh of a pen name
             validate: {
                 is: /^[ .a-z]+$/i,      // Validate a name using regular expression
             }

@@ -7,6 +7,36 @@ import sequelize from '../config/connection.js';
 
 class UserFavoriteBook extends Model {}
 
-UserFavoriteBook.init();
+UserFavoriteBook.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            }
+        },
+        book_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'book',
+                key: 'id'
+            }
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user_favorite_book'
+    }
+);
 
 export default UserFavoriteBook;

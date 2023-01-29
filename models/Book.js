@@ -2,6 +2,7 @@
  * @file models/Book.js
  * @desc Model for a Book
  * @note Author is not included in this object because some books have more than one Author. BookAuthor.js will bridge between Books and Authors.
+ * @TODO Publisher data
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';

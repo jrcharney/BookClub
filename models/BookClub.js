@@ -7,6 +7,36 @@ import sequelize from '../config/connection.js';
 
 class BookClub extends Model {}
 
-BookClub.init();
+BookClub.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        club_id : {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'club',
+                key: 'id'
+            }
+        },
+        book_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'book',
+                key: 'id'
+            }
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'book_club'
+    }
+);
 
 export default BookClub;

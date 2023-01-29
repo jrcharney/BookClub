@@ -1,13 +1,13 @@
 /**
- * @file models/UserFavorite
- * @desc The user can add an Author to their favorites.
+ * @file models/UserFavoriteBookList.js
+ * @desc The user can add a BookList to their favorites.
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 
-class UserFavoriteAuthor extends Model {}
+class UserFavoriteBookList extends Model {}
 
-UserFavoriteAuthor.init(
+UserFavoriteBookList.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -22,10 +22,10 @@ UserFavoriteAuthor.init(
                 key: 'id',
             }
         },
-        author_id: {
+        user_book_list_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'author',
+                model: 'user_book_list',
                 key: 'id'
             }
         }
@@ -35,8 +35,8 @@ UserFavoriteAuthor.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user_favorite_author'
+        modelName: 'user_favorite_book_list'
     }
 );
 
-export default UserFavoriteAuthor;
+export default UserFavoriteBookList;
