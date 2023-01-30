@@ -16,7 +16,7 @@ Club.init(
             primaryKey: true,
             autoIncrement: true
         },
-        club_name: {                   // First Name
+        name: {                   // First Name
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -46,7 +46,7 @@ Club.init(
         updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
         freezeTableName: true,
         underscored: true,
-        modelName: 'author'
+        modelName: 'club'
     }
 );
 

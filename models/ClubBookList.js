@@ -44,7 +44,7 @@ ClubBookList.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user_book_list'
+        modelName: 'club_book_list'
     }
 );
 
