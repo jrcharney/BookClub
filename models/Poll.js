@@ -1,13 +1,14 @@
 /**
- * @file model/Board.js
- * @desc A board is a collection of Topics
+ * @file model/Poll.js
+ * @desc create a Poll that can be in a Topic
+ * @note A Poll will have an association with a Topic.
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 
-class Board extends Model {}
+class Poll extends Model {}
 
-Board.init(
+Poll.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,33 +16,33 @@ Board.init(
             primaryKey: true,
             autoIncrement: true
         },
-        club_id : {                     // A board should be created in a club.
+        topic_id : {
             type: DataTypes.INTEGER,
             references: {
-                model: "club",
-                key: "id"
-            }
-        },
-        board_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty: true,
-                max: 128                // Limit the length of the first name
+                model: 'topic',
+                key: 'id'
             }
         },
         created_by : {
             type: DataTypes.INTEGER,
-            references: {
-                model: "club_member",       // NOTE: This Club Member must be a ClubAdministrator or a ClubModerator
-                key: "id"
+            references : {
+                model: 'club_member',
+                key: 'id'
             }
         },
-        about : {                  // Describe this board
+        question: {                  // Our poll question
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: false,
             validate: {
-                max: 500
+                max: 128            // Limit our question to 128 characters.
+            }
+        },
+        expiredAt : {
+            type: DataTypes.DATE,
+            allowNull: false,
+            // TODO: defaultValue should be about a week from when the poll was created.
+            validate : {
+                isDate: true
             }
         }
     },
@@ -52,8 +53,8 @@ Board.init(
         updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
         freezeTableName: true,
         underscored: true,
-        modelName: 'author'
+        modelName: 'poll'
     }
 );
 
-export default Board;
+export default Poll;

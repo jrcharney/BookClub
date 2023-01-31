@@ -1,28 +1,20 @@
 /**
- * @file models/ClubMember.js
- * @desc A ClubMember is a User who is a member of a Club.
- * @Note Generate ClubMember lists using this table.
- * @TODO Classes for ClubModerator and ClubAdministrator, eventually.
+ * @file models/StaffUser.js
+ * @desc A StaffUsers is a User who has "employee access" to the site.
+ * Basically, anyone who is a staff user has "behind-the-scenes" access to the site to make sure thing still work.
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js';
 
-class ClubMember extends Model {}
+class StaffUser extends Model {}
 
-ClubMember.init(
+StaffUser.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-        },
-        club_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'club',
-                key: 'id'
-            }
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -31,20 +23,14 @@ ClubMember.init(
                 key: 'id'
             }
         },
-        can_make_polls : {
+        is_site_moderator : {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        is_club_moderator : {
+        is_site_administrator : {
             type: DataTypes.BOOLEAN,
-            defaultValue: false
+            defaultValue: false 
         },
-        is_club_administrator : {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false     // NOTE: This should be true for the person who created the group.
-        },
-        
-        // TODO: User Invites?
     },
     {
         sequelize,
@@ -53,8 +39,8 @@ ClubMember.init(
         updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
         freezeTableName: true,
         underscored: true,
-        modelName: 'club_member'
+        modelName: 'staff_user'
     }
 );
 
-export default ClubMember;
+export default StaffUser;

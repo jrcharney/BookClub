@@ -64,6 +64,20 @@ import UserFavoriteTag from './UserFavoriteTag.js';
 import UserFavoriteBookList from './UserFavoriteBookList.js';
 import UserFavoriteClubList from './UserFavoriteClubList.js';
 
+// Message Boards (6)
+import Board from './Board.js';
+import Topic from './Topic.js';
+import Post from './Post.js';
+import PostReply from './PostReply.js';
+import Poll from './Poll.js';
+import PollItem from './PollItem.js';
+// TODO: UserFavoriteBoard
+// TODO: UserFavoriteTopic
+// TODO: UserFavoritePost
+
+// Staff (1)
+import StaffUser from './StaffUser.js';
+
 export default { 
     User, Book, Author, Tag, Category, 
     BookAuthor , BookTag, BookCategory, AuthorTag, CategoryEchelon,
@@ -81,5 +95,7 @@ export default {
     UserFavoriteClub, 
     UserFavoriteTag, 
     UserFavoriteBookList, 
-    UserFavoriteClubList
+    UserFavoriteClubList,
+    Board, Topic, Post, PostReply, Poll, PollItem,
+    StaffUser
 }
