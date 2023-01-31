@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "cSpell.words": [
         "Blume",
         "DATEONLY",
@@ -6,4 +7,7 @@
         "Neurodiversity",
         "VARCHAR"
     ]
+=======
+    "liveServer.settings.port": 5501
+>>>>>>> 34c8c7f3c41dab24d01e2ae16d089b8485c3c8a2
 }
