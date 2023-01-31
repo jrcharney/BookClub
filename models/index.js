@@ -67,10 +67,11 @@ import UserFavoriteClubList from './UserFavoriteClubList.js';
 export default { 
     User, Book, Author, Tag, Category, 
     BookAuthor , BookTag, BookCategory, AuthorTag, CategoryEchelon,
-    UserProfile, UserSettings, UserBookList,
+    UserProfile, UserSettings,
     Friend, FriendTag,
     FriendList, FriendListItem, FriendListTag,
     BookList, BookListItem, BookListTag,
+    UserBookList,
     Club, ClubTag, ClubMember, BookClub, AuthorClub,
     ClubList, ClubListItem, ClubListTag,
     ClubBookList, ClubBookListItem,

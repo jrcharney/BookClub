@@ -171,8 +171,8 @@ erDiagram
         INT tag_id FK "REF tag(id)"
     }
 
-    user ||--|{ club : "A user can create a club"
-    user }|--|| club_member : "User is a club member"
+    user ||--|{ club : "A user can create many clubs"
+    user ||--|| club_member : "User is a club member"
     club }|--|| club_member : "The club the user joined"
 
     user ||--|{ user_book_list : "User creates a user book list"
@@ -210,3 +210,5 @@ erDiagram
     tag ||--|{ friend_list_tag : "A tag associated with a friend by a user"
 
 ```
+
+> TODO: Correct the relationships in this model
