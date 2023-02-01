@@ -18,9 +18,9 @@ Author.init(
         },
         first_name: {                   // First Name
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,            // First name can be null if there is no first name.
             validate: {
-                notEmpty: true,
+                notEmpty: false,
                 max: 128                // Limit the length of the first name
             }
         },
@@ -35,7 +35,7 @@ Author.init(
         pen_name: {                     // Nom de plume. e.g. what Mark Twain was for Samuel L. Clemens.
             type: DataTypes.STRING,
             allowNull: true,
-            max: 128,                   // Limit the lengh of a pen name
+            max: 128,                   // Limit the length of a pen name
             validate: {
                 is: /^[ .a-z]+$/i,      // Validate a name using regular expression
             }
