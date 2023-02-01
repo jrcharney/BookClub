@@ -1,6 +1,7 @@
 import { dirname, path } from "path";
 import express from "express";
 import session from "express-session";
+import config from "./config/config";
 import sequelize from "./config/connections";
 import routes from "./controllers";
 import helpers from "./utils/helpers";
