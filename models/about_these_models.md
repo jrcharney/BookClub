@@ -7,6 +7,7 @@ I (Jason) took in a tall order here. Note that any model that is empty will even
 - Use SINGULAR nouns. (Not "Books", just "Book".)
   - I need to correct my grammer in some of the places where I left plurals where there shouldn't be.
 - The Chain Link Emoji (🔗) represents a Link table/model
+- This project DOES have a lot of classes in it and may look like an overwhelming amount of work. However, most of these classes were easy to write with some simple copying, pasting, and editing of a few keywords.
 
 ## Phase I: The Basics
 
