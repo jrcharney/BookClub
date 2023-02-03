@@ -3,7 +3,7 @@ import seedComments from "./comment-seeds.js";
 import seedBooks from "./book-seeds.js";
 import seedAuthor from "./author-seeds.js";
 import seedBookAuthor from "./bookauthor-seeds.js";
-
+import process from "process"
 import sequelize from "../config/connection";
 
 

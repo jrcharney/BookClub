@@ -1,18 +1,18 @@
 <body>
-  <div id="login-container" class="center-div">
+  <div id="login-container">
   <form class="login-form">
+  <div>
+    <label for="email-signup">email:</label>
+    <input type="text" id="email-signup" />
+  </div>
     <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" />
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" />
+      <label for="password-login">Password:</label>
+      <input type="password" id="password-login"/>
     </div>
     <div>
       <button type="submit">Login</button>
     </div>
   </form>
   </div>
-  <a href="/signup" class="center-bottom">Create an Account</a>
+  <a href="/signup">Create an Account</a>
   <script src="/public/assets/js/login.js"></script>

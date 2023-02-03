@@ -20,7 +20,10 @@ const sess = {
   // Secret passphrase
   secret: 'If I told you it would not be a secret',
   // Cookie Data
-  cookie: {},
+  cookie: {
+        // Session will automatically expire in 10 minutes
+        expires: 10 * 60 * 100
+  },
   // ???
   resave: false,
   // ???
