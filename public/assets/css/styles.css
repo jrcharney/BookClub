@@ -23,21 +23,14 @@
     font-size: 20px;
     font-size: 20px;
     font-family: Helvetica, Arial, sans-serif;
-   }
-      
-
+  }
 
 label {
     font-weight: bold;
         display: block;
         width: 100%;
         color: #00BFFF; /* light blue color */
-          
     }
-          
-    
-    
-
 
 .separate {
     margin-bottom: 10px;
@@ -66,7 +59,6 @@ label {
     font-size: 24px; /* make text larger */
   }
   
- 
   input[type="submit"] {
     font-size: 20px; /* increase the font size */
     padding: 10px 20px; /* increase the button size */
@@ -122,36 +114,33 @@ label {
 
 .center-bottom {
     position: relative;
-  }
-  
+}
 
-  .center-bottom {
+.center-bottom {
     display: flex;
     align-items: flex-end;
     position: absolute;
-     left: 50%;
-     bottom: -4%;
-  transform: translate(-50%, 20px);
-  }
+    left: 50%;
+    bottom: -4%;
+    transform: translate(-50%, 20px);
+}
   
-  .submit{
+.submit{
     display: flex;
     align-items: flex-end;
     position: absolute;
-     left: 50%;
-     bottom: -10%;
-  transform: translate(-50%, 20px);
+    left: 50%;
+    bottom: -10%;
+    transform: translate(-50%, 20px);
+}
 
-  }
-
-  .form-container {
+.form-container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .create-account-btn {
+
+.create-account-btn {
     align-self: center;
     margin-left: 10px;
-  }
-  
-  
+}

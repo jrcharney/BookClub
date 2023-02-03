@@ -2,7 +2,7 @@ import { BookAuthor } from "../models/BookAuthor.js";
 // import { Book } from "../models/Book.js";
 // import { Author } from "../models/Author.js";
 
-const bookauthorData = [
+const bookAuthorData = [
     {
     book_id: 1,
     author_id: 1,
@@ -25,7 +25,7 @@ const bookauthorData = [
     },      
 ]
 
-const seedBookAuthor = () => BookAuthor.bulkCreate(bookauthorData);
+const seedBookAuthor = () => BookAuthor.bulkCreate(bookAuthorData);
 
 export default seedBookAuthor;
 

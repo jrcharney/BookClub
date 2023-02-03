@@ -19,7 +19,7 @@ const commentData = [
     user_id: 2,
   },
   {
-    comment_text: "I would not reccomend this book.",
+    comment_text: "I would not recommend this book.",
     post_id: 4,
     user_id: 3,
   },
