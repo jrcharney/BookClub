@@ -1,7 +1,11 @@
-const router = require('express').Router();
+import { Router } from 'express';
 import sequelize from '../config/connection';
 import { Post, User, Comment } from '../models';
 
+const router = Router();
+
+// TODO: Change all the 'created_at' to 'createdAt'. Sequelize can do this.
+// TODO: Consider adding an 'updatedAt'. Sequelize also supports this.
 router.get('/', (req, res) => {
     console.log(req.session);
     

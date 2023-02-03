@@ -1,3 +1,4 @@
+import process from "process";
 import { Sequelize } from "sequelize";
 import config from "./config.js";
 
@@ -13,6 +14,6 @@ await sequelize.authenticate().catch((err) => {
   process.exit(1);
 });
 
-console.log("Connection has been established succesfully");
+console.log("Connection has been established successfully");
 
 export default sequelize;
