@@ -1,6 +1,8 @@
-const router = require("express").Router();
+import { Router } from "express";
 import { User, Post, Comment } from "../../models";
 import withAuth from "../../utils/auth";
+
+const router = Router();
 
 router.get("/", (req, res) => {
   User.findAll({
