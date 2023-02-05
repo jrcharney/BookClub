@@ -1,0 +1,154 @@
+#login-container {
+  width: 350px;
+  height: 250px;
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.center-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+form {
+  font-size: 20px;
+  font-size: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+ }
+    
+
+
+label {
+  font-weight: bold;
+      display: block;
+      width: 100%;
+      color: #00BFFF; /* light blue color */
+        
+  }
+        
+  
+  
+
+
+.separate {
+  margin-bottom: 10px;
+}
+
+
+.title {
+  font-family: Helvetica, Arial, sans-serif;
+  z-index: 1; /* higher value than the video element */
+  color: #00BFFF; /* blue color */
+  font-size: 3em; /* make the font-size bigger */
+  text-align: center; /* center the text */
+}
+
+body {
+  background-image: url('library.jpeg'); /* replace 'path/to/image.jpg' with the actual path to your image */
+  background-size: cover; /* scales the image to cover the entire background */
+  background-repeat: no-repeat; /* the image will not repeat */
+}
+
+#login-container {
+  text-align: center; /* center the container on the page */
+}
+
+label, input[type="text"], input[type="password"] {
+  font-size: 24px; /* make text larger */
+}
+
+
+input[type="submit"] {
+  font-size: 20px; /* increase the font size */
+  padding: 10px 20px; /* increase the button size */
+}
+
+input[type="submit"]:hover {
+  background-color: #00BFFF; /* change the background color on hover */
+  cursor: pointer; /* change the cursor to a pointer on hover */
+}
+
+.bottom-link {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: limegreen;
+}
+
+
+.create-account-link {
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  overflow: visible;
+}
+
+.create-account-btn {
+  background-color: #0000FF; /* blue color */
+  color: white; /* text color */
+  font-size: 20px; /* font size */
+  padding: 10px 20px; /* button padding */
+  border-radius: 10px; /* rounded corners */
+  text-align: center; /* center text */
+  transition: background-color 0.2s ease; /* hover effect */
+  
+}
+.create-account-btn:hover {
+  background-color: #00FFFF; /* hover color */
+}
+
+.center-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.create-account-button {
+  margin-top: 20px; /* or padding-top: 20px; */
+}
+
+.center-bottom {
+  position: relative;
+}
+
+
+.center-bottom {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+   left: 50%;
+   bottom: -4%;
+transform: translate(-50%, 20px);
+}
+
+.submit{
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+   left: 50%;
+   bottom: -10%;
+transform: translate(-50%, 20px);
+
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-account-btn {
+  align-self: center;
+  margin-left: 10px;
+}
