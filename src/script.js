@@ -95,7 +95,7 @@ function loadQuestions(){
 	for(let queNo in questions){
 		let question = questions[queNo];
 		data.push(question);
-		// questionView.innerHTML += `<div class="que-item" id="${queNo}"><h2 class="que-title">${question.title}</h2><p class="que-text">${question.text}</p></div>`;
+		
 	}
 	data.sort((a, b)=>{
 		return b.votes-a.votes;
