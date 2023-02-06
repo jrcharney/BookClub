@@ -5,7 +5,7 @@
  * @TODO Should we apply a tag search when querying objects?
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Tag extends Model {}
 

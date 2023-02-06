@@ -5,9 +5,9 @@
  * @TODO Publisher data
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
-class Book extends Model {}
+export default class Book extends Model {}
 
 Book.init(
     {
@@ -63,4 +63,4 @@ Book.init(
     }
 );
 
-export default Book;
+

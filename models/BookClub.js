@@ -3,7 +3,7 @@
  * @desc A BookClub is a Club to discuss a Book.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookClub extends Model {}
 

@@ -3,7 +3,7 @@
  * @desc Associate two posts. One that is a reply to another.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class PostReply extends Model {}
 

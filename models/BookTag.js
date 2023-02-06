@@ -3,7 +3,7 @@
  * @desc Link Books with Tags. A book can have many tags. Tags can be assigned to many books.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookTag extends Model {}
 

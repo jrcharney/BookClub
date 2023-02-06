@@ -1,6 +1,9 @@
 import { Router } from 'express';
-import sequelize from '../config/connection';
-import { Post, User, Comment } from '../models';
+import Comment from "../models/Comment.js";
+import User from "../models/User.js"
+import Post from "../models/Post.js"
+import Book from '../models/Book.js';
+import withAuth from '../utils/auth.js';
 
 const router = Router();
 
@@ -43,6 +46,19 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+router.get('/book/:id', withAuth, async (req, res) => {
+  try {
+    const dbBookData = await Book.findByPk(req.params.id);
+  
+    const book = dbBookData.get({ plain: true });
+  
+    res.render('book', { book, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

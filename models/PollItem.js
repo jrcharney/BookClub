@@ -3,7 +3,7 @@
  * @desc A poll Item is an option in a Poll.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class PollItem extends Model {}
 

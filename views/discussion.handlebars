@@ -1,0 +1,27 @@
+<section class="painting">
+    <h1>Welcome to BookClub Discussion !</h1>
+  <img src="/images/{{book.filename}}" alt="{{book.description}}">
+  <div class="book-details">
+    <h3>{{book.title}}</h3>
+    <p>By: {{book.author}}</p>
+    <div class="response-wrapper">
+        <h3 class="text">Response</h3>
+				<div class="responses" id="responses">
+					<div class="response">
+						<h3 class="res-name">Scottie32</h3>
+						<p class="res-text">Tha main message is that rich dad and poor dad have the same issues. One has a higher quality issue than the other.</p>
+					</div>
+					<div class="response">
+						<h3 class="res-name">Scottie32</h3>
+						<p class="res-text">Tha main message is that rich dad and poor dad have the same issues. One has a higher quality issue than the other.</p>
+					</div>
+        <div class="response-form">
+	    <h2 class="text">Add Response</h2>
+	        <form id="resForm">
+		        <input type="text" name="subject" class="subject" placeholder="Enter Name" minlength="3" maxlength="20" required><br>
+		        <textarea name="question" rows="4" placeholder="Enter Comment" maxlength="1000" required></textarea>
+		        <div class="btn-submit"><button id="add-res">Submit</button></div>
+	     </form>
+        </div>
+    </div>
+</section>

@@ -4,7 +4,7 @@
  * @note A Poll will have an association with a Topic.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Poll extends Model {}
 

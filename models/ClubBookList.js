@@ -5,7 +5,7 @@
  * @Note This table associates a ClubMember (not a User) and a Club with a BookList.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class ClubBookList extends Model {}
 

@@ -4,7 +4,7 @@
  * @TODO Make sure that anything private is put in the UserSettings.js
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class UserProfile extends Model {}
 

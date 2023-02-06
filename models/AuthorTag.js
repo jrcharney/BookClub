@@ -3,7 +3,7 @@
  * @desc Link Authors with Tags. An author can have many tags. Tags can be assigned to many authors.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class AuthorTag extends Model {}
 

@@ -1,4 +1,4 @@
-import { BookAuthor } from "../models/BookAuthor.js";
+import BookAuthor from "../models/BookAuthor.js";
 // import { Book } from "../models/Book.js";
 // import { Author } from "../models/Author.js";
 

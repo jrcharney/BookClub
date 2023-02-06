@@ -3,7 +3,7 @@
  * @desc An AuthorClub is a Club to discuss an Author.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class AuthorClub extends Model {}
 

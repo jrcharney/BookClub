@@ -5,7 +5,7 @@
  * @TODO Classes for ClubModerator and ClubAdministrator, eventually.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class ClubMember extends Model {}
 

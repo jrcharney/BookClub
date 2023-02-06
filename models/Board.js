@@ -3,7 +3,7 @@
  * @desc A board is a collection of Topics
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Board extends Model {}
 

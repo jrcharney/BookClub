@@ -5,7 +5,7 @@
  * @TODO User Friend Request should probably be its own class. This class would verify that there is a friendship.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Friend extends Model {}
 

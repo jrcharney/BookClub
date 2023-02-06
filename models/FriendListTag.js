@@ -3,7 +3,7 @@
  * @desc Assign tags to a FriendList to make them easier to find.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class FriendListTag extends Model {}
 

@@ -3,7 +3,7 @@
  * @desc A BookListItem is a Book assigned to a BookList.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookListItem extends Model {}
 

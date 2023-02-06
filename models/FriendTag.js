@@ -3,7 +3,7 @@
  * @desc Assign Tags to Friends to make them easier to remember and find.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class FriendTag extends Model {}
 

@@ -8,12 +8,13 @@
 // To organize this better, let's export or classes in groups and indicate how many classes are in that group.
 // The current count of classes is 39.
 
-// Basic Items (5)
+// Basic Items (6)
 import User from './User.js';
 import Book from './Book.js';
 import Author from './Author.js';
 import Tag from './Tag.js';
 import Category from './Category.js';
+import Comment from './Comment.js';
 
 // Relationships between Basic Items (5)
 import BookAuthor from './BookAuthor.js';
@@ -79,7 +80,7 @@ import PollItem from './PollItem.js';
 import StaffUser from './StaffUser.js';
 
 export default { 
-    User, Book, Author, Tag, Category, 
+    User, Book, Author, Tag, Category, Comment, 
     BookAuthor , BookTag, BookCategory, AuthorTag, CategoryEchelon,
     UserProfile, UserSettings,
     Friend, FriendTag,

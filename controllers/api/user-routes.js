@@ -1,8 +1,12 @@
-const router = require("express").Router();
-import { User, Post, Comment } from "../../models";
-import withAuth from "../../utils/auth";
+import { Router } from 'express';
+import Comment from "../../models/Comment.js";
+import User from "../../models/User.js"
+import Post from "../../models/Post.js"
+import withAuth from "../../utils/auth.js";
 
-router.get("/", (req, res) => {
+const userRoutes = Router();
+
+userRoutes.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] },
   })
@@ -13,7 +17,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+userRoutes.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
@@ -47,7 +51,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+userRoutes.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -67,7 +71,7 @@ router.post("/", (req, res) => {
   });
 });
 
-router.post("/login", (req, res) => {
+userRoutes.post("/login", (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
@@ -88,8 +92,6 @@ router.post("/login", (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      req.session.twitter = dbUserData.twitter;
-      req.session.github = dbUserData.github;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: "You are now logged in!" });
@@ -97,7 +99,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/logout", (req, res) => {
+userRoutes.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -107,7 +109,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, (req, res) => {
+userRoutes.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -127,7 +129,7 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-router.delete("/:id", withAuth, (req, res) => {
+userRoutes.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,
@@ -146,4 +148,4 @@ router.delete("/:id", withAuth, (req, res) => {
     });
 });
 
-export default router;
+export default userRoutes;
