@@ -1,3 +1,4 @@
+// Note: (JC) Reworked this since this Comment Model was not compatible with any of the potential message board stuff.
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/connection.js";
 
@@ -25,6 +26,15 @@ Comment.init(
         key: "id",
       },
     },
+    /* This works better */
+    book_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "book",
+        key: "id",
+      },
+    }
+    /*
     post_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -32,6 +42,7 @@ Comment.init(
         key: "id",
       },
     },
+    */
   },
   {
     sequelize,
