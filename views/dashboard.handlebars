@@ -1,10 +1,10 @@
-{{#if posts.length}}
+{{#if book.length}}
     </div>
 
-    {{#each posts as |post|}}
-        {{> post-info post}}
+    {{#each book as |book|}}
+        {{> book}}
         
-            <a href="/dashboard/edit/{{post.id}}"><button>edit post</button></a>
+            <a href="/dashboard/edit/{{book.id}}"><button>edit post</button></a>
         </div>
     {{/each}}
 
