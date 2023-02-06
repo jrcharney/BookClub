@@ -3,7 +3,7 @@
  * @desc Items on a FriendLists. FriendListItems are basically Friends.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class FriendListItem extends Model {}
 

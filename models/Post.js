@@ -3,7 +3,7 @@
  * @desc A post is a message posted in a Topic by a User
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Post extends Model {}
 
@@ -48,7 +48,7 @@ Post.init(
         updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
         freezeTableName: true,
         underscored: true,
-        modelName: 'poll'
+        modelName: 'post'
     }
 );
 

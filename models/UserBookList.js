@@ -5,7 +5,7 @@
  * @note BookList name and visiblity should be in the BookList class.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class UserBookList extends Model {}
 

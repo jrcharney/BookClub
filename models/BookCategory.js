@@ -3,7 +3,7 @@
  * @desc Link Categories with Books
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookCategory extends Model {}
 

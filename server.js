@@ -1,10 +1,10 @@
-import { dirname, path } from "path";
+import { dirname } from "path";
+import path  from "path";
 import express from "express";
 import session from "express-session";
-import config from "./config/config";
-import sequelize from "./config/connections";
-import routes from "./controllers";
-import helpers from "./utils/helpers";
+import config from "./config/config.js";
+import sequelize from "./config/connections.js";
+import routes from "./controllers/index.js";
 import exphbs from "express-handlebars";
 import ConnSessSeq from "connect-session-sequelize";
 import { fileURLToPath } from "url";
@@ -12,7 +12,7 @@ const SequelizeStore = ConnSessSeq(session.Store);
 
 const app = express();
 const PORT = config.port || 3001;
-const hbs = exphbs.create({helpers});
+const hbs = exphbs.create();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

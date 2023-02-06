@@ -4,9 +4,9 @@
  * @TODO Adjust the lenghts on first, last, and pen name fields.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
-class Author extends Model {}
+export default class Author extends Model {}
 
 Author.init(
     {
@@ -71,4 +71,3 @@ Author.init(
     }
 );
 
-export default Author;

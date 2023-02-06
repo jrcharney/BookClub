@@ -3,7 +3,7 @@
  * @desc The user can add a ClubList to their favorites.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class UserFavoriteClubList extends Model {}
 

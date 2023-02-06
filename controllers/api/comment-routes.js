@@ -1,7 +1,7 @@
-const router = require("express").Router();
-import { Comment } from "../../models";
-import withAuth from "../../utils/auth";
-
+import { Router } from 'express';
+import Comment from "../../models/Comment.js";
+import withAuth from "../../utils/auth.js";
+const router = Router();
 router.get("/", (req, res) => {
   Comment.findAll({})
     .then((dbCommentData) => res.json(dbCommentData))

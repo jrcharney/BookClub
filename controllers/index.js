@@ -1,5 +1,5 @@
 import { Router } from "express";
-import apiRoutes from "./api";
+import apiRoutes from "./api/index.js";
 import homeRoutes from "./home-routes.js";
 import dashboardRoutes from "./dashboard-routes.js";
 

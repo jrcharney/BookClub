@@ -4,7 +4,7 @@
  * @Note There are plans to expand this to include discussion boards, but we won't build those at this time.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Club extends Model {}
 

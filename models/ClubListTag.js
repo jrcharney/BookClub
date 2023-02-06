@@ -3,7 +3,7 @@
  * @desc A ClubList is a Tag that a user can assign to a ClubList so the user can identify what Clubs are part of that list.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class ClubListTag extends Model {}
 

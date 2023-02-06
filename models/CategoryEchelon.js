@@ -5,7 +5,7 @@
  * It was easier to create this table such that two records can be related than it was to ad another field with a foregin key to a record of the same data type, especially since some records might not have any relationship.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 //import Category from './Category.js';
 
 class CategoryEchelon extends Model {}

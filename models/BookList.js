@@ -4,7 +4,7 @@
  * @note A user can directly create one of these, but a club will need to associate a BookList as a ClubBookList.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookList extends Model {}
 

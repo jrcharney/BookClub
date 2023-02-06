@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import sequelize from '../config/connection';
-import { Post, User, Comment } from '../models';
-import withAuth from '../utils/auth';
+import Comment from "../models/Comment.js";
+import User from "../models/User.js"
+import Post from "../models/Post.js"
+import withAuth from '../utils/auth.js';
 
 const router = Router();
 

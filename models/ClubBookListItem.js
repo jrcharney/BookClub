@@ -3,7 +3,7 @@
  * @desc A ClubBookListItem is a BookListItem for a ClubBookList added by a ClubMember of a Club.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class ClubBookListItem extends Model {}
 

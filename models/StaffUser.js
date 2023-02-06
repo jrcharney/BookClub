@@ -4,7 +4,7 @@
  * Basically, anyone who is a staff user has "behind-the-scenes" access to the site to make sure thing still work.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class StaffUser extends Model {}
 

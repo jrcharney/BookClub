@@ -6,7 +6,7 @@
  * @TODO UserSettings should have an option to display/hide age, gender, etc. on a UserProfile
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class UserSettings extends Model {}
 

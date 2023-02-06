@@ -3,7 +3,7 @@
  * @desc A BookListTag is a Tag assigned to a BookList. Many tags can be applied to a book list.
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class BookListTag extends Model {}
 

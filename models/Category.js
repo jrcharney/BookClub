@@ -4,7 +4,7 @@
  * @TODO How about categories with sub categories. (This will definitely make it different than the Tag class. It will need to be a tree structure.)
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class Category extends Model {}
 

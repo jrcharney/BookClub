@@ -4,7 +4,7 @@
  * @TODO Should we organize like this for Family members (FamilyUser)?
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import sequelize from '../config/connections.js';
 
 class FriendList extends Model {}
 
