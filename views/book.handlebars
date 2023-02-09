@@ -1,0 +1,25 @@
+<section class="book">
+  <img src="/images/{{book.filename}}" alt="{{book.description}}">
+  <div class="book-details">
+    <h3>{{book.title}}</h3>
+    <p>By: {{book.author}}</p>
+  </div>
+</section>
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <label for="comment">Write a Comment:</label>
+    <input class="form-input" name="comment-body" id="new-comment"/>
+  </div>
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+{{/if}}
+
+{{> comments book.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
