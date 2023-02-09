@@ -5,7 +5,7 @@
  * @TODO Should we ask the user for their age before signing up?
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connections.js';
+import sequelize from '../../config/connections.js';
 import { compareSync, hash } from 'bcrypt';
 
 

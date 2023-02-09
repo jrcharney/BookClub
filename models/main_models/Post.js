@@ -3,7 +3,7 @@
  * @desc A post is a message posted in a Topic by a User
  */
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connections.js';
+import sequelize from '../../config/connections.js';
 
 class Post extends Model {}
 
@@ -15,20 +15,14 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        topic_id : {                    // Topic ID (Associate a Post with a topic)
+        user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
-                model: 'topic',
-                key: 'id'
+              model: 'user',
+              key: 'id'
             }
-        },
-        created_by : {                  // Club Member who wrote it
-            type: DataTypes.INTEGER,
-            references : {
-                model: 'club_member',
-                key: 'id'
-            }
-        },
+          },
         message: {                  // Our post message
             type: DataTypes.TEXT,
             allowNull: false,
