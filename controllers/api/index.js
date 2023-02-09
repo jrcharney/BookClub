@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import userRoutes from "./user-routes.js";
 import commentRoutes from "./comment-routes.js";
-const router = Router();
+const APIrouter = Router();
 
-router.use("/users", userRoutes);
-router.use("/comments", commentRoutes);
+APIrouter.use("/users", userRoutes);
+APIrouter.use("/comments", commentRoutes);
 
-export default router;
+export default APIrouter;

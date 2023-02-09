@@ -4,11 +4,10 @@ import User from "../models/User.js"
 import Post from "../models/Post.js"
 import withAuth from '../utils/auth.js';
 
-const router = Router();
+const dashboardRouter = Router();
 
-// TODO: Change all the 'created_at' to 'createdAt'. Sequelize can do this.
 // TODO: Consider adding an 'updatedAt'. Sequelize also supports this.
-router.get('/', withAuth, (req, res) => {
+dashboardRouter.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
         // use the ID from the session
@@ -17,13 +16,13 @@ router.get('/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'createdAt',
         'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -46,7 +45,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
-  router.get('/edit/:id', withAuth, (req, res) => {
+  dashboardRouter.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id
@@ -54,13 +53,13 @@ router.get('/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'createdAt',
         'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -92,7 +91,7 @@ router.get('/', withAuth, (req, res) => {
       });
 });
 
-router.get('/create/', withAuth, (req, res) => {
+dashboardRouter.get('/create/', withAuth, (req, res) => {
     Post.findAll({
       where: {
         // use the ID from the session
@@ -101,13 +100,13 @@ router.get('/create/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'createdAt',
         'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -131,4 +130,4 @@ router.get('/create/', withAuth, (req, res) => {
   });
 
 
-export default router;
+export default dashboardRouter;
