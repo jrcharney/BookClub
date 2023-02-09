@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import Comment from "../models/Comment.js";
-import User from "../models/User.js"
-import Post from "../models/Post.js"
+import Comment from "../models/main_models/Comment.js";
+import User from "../models/main_models/User.js"
+import Post from "../models/main_models/Post.js"
 import withAuth from '../utils/auth.js';
 
 const dashboardRouter = Router();
