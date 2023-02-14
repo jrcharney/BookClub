@@ -10,19 +10,27 @@ const router = Router();
 // We shouldn't need to login to browse
 router.get("/book", (req,res) => {
     Book.findAll({
-        // where: {},
+        attributes : [
+            'title'
+        ],
         include: [
             {
                 model: BookAuthor,
+                //attributes: [],
                 where: {
-
+                    
                 },
-                include: {
+                include: [{
                     model: Author,
+                    attributes: [
+                        'first_name',
+                        'last_name',
+                        'pen_name'
+                    ],
                     where: {
-                        author
+                        
                     }
-                }
+                }]
             }
         ]
     }).then().catch((err) => {
@@ -42,6 +50,10 @@ router.get("/book/:id", (req,res) => {
     Book.findAll({
         where: {
             id: req.params.id
+        },
+        include: {
+            model: BookAuthor,
+            where: {}
         }
     }).then().catch((err) => res.status(404).json(err));
     // TODO: When we find a book, we need to find the author of the book
@@ -52,7 +64,15 @@ router.get("/book/:id", (req,res) => {
 
 // TODO: Need to limit editing the database to whoever has permission to do so.
 router.post("/book/", withAuth, (req, res) => {
-    Book.create().then({
+    // TODO: Do not allow anyone who is not logged in to post (create) new books
+    Book.create({
+        title       : req.params.title,
+        isbn        : req.params.isbn,
+        loc         : req.params.loc,
+        dewey       : req.params.dewey,
+        pub_year    : req.params.pub_year,
+        description : req.params.description
+    }).then({
         // TODO: Count the number of Authors
         // TODO: For each Author
             // TODO: Search for author
@@ -62,17 +82,22 @@ router.post("/book/", withAuth, (req, res) => {
     // TODO: Other things would be created (Tags, Categories)
 });
 
+/*
 // TODO: Need to limit editing the database to whoever has permission to do so.
 router.put("/book/:id", withAuth, (req, res) => {
+    // TODO: Do not allow anyone who is not logged in to update
     Book.update({
         // TODO: Some action needs to go here.
     },{where: {book_id: req.params.id}}).then(
-       //Author.update({},{where: })
+       Author.update({
+        where: {}
+       },{where: })
     ).catch((err) => {})
 });
 
 // TODO: Need to limit editing the database to whoever has permission to do so.
 router.delete("/book/:id",withAuth, (req,res) => {
+    // TODO: Do not allow anyone who is not logged in to delete
     Book.destroy({
         where: { id: req.params.id }
     }).then((bookData) => {
@@ -86,3 +111,4 @@ router.delete("/book/:id",withAuth, (req,res) => {
         res.status(500).json(err);
     });
 });
+*/
