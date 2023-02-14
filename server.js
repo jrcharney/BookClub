@@ -1,5 +1,6 @@
-import { dirname } from "path";
-import path  from "path";
+import * as path from 'path';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 import express from "express";
 import session from "express-session";
 import config from "./config/config.js";
@@ -7,14 +8,12 @@ import sequelize from "./config/connections.js";
 import routes from "./controllers/index.js";
 import exphbs from "express-handlebars";
 import ConnSessSeq from "connect-session-sequelize";
-import { fileURLToPath } from "url";
 const SequelizeStore = ConnSessSeq(session.Store);
 
 const app = express();
 const PORT = config.port || 3001;
 const hbs = exphbs.create();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
 
 const sess = {
   // Secret passphrase
