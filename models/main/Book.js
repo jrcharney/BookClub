@@ -7,7 +7,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../config/connections.js';
 
-export default class Book extends Model {}
+class Book extends Model {}
 
 Book.init(
     {
@@ -21,21 +21,34 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      author: {
+      /*
+      author: {                 Use the AUTHOR data!
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      */
+      isbn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          // Validate our ISBN number
+          // Source https://www.appsloveworld.com/php/142/use-regex-to-verify-an-isbn-number
+          is: /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/
+        }
       },
       description: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      post_id: {
+      /*
+      post_id: {                  // NO!
         type: DataTypes.INTEGER,
         references: {
           model: 'post',
           key: 'id',
         },
       },
+      */
     },
     {
         sequelize,
@@ -48,4 +61,4 @@ Book.init(
     }
 );
 
-
+export default Book;

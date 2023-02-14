@@ -5,7 +5,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../config/connections.js';
 
-export default class BookAuthor extends Model {}
+class BookAuthor extends Model {}
 
 BookAuthor.init(
     {
@@ -17,6 +17,7 @@ BookAuthor.init(
         },
         book_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'book',
                 key: 'id'
@@ -24,6 +25,7 @@ BookAuthor.init(
         },
         author_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'author',
                 key: 'id'
@@ -38,3 +40,5 @@ BookAuthor.init(
         modelName: 'book_author'
     }
 );
+
+export default BookAuthor;

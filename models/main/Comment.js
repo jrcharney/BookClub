@@ -7,24 +7,24 @@ Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       allowNull: false,
+      primaryKey: true,
       autoIncrement: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
     },
     book_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "book",
-        key: "id",
+        model: 'book',
+        key: 'id',
       },
     },
     comment_text: {

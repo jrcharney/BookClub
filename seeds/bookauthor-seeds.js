@@ -23,7 +23,7 @@ const bookAuthorData = [
     book_id: 5,
     author_id: 5,
     },      
-]
+];
 
 const seedBookAuthors = () => BookAuthor.bulkCreate(bookAuthorData);
 

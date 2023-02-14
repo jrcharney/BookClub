@@ -6,7 +6,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../config/connections.js';
 
-export default class Author extends Model {}
+class Author extends Model {}
 
 Author.init(
     {
@@ -71,3 +71,4 @@ Author.init(
     }
 );
 
+export default Author;
