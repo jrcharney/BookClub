@@ -1,4 +1,4 @@
-import User from "../models/main_models/User.js";
+import User from "../models/main/User.js";
 
 const userData = [
   {

@@ -1,4 +1,4 @@
-import Author from "../models/Author.js";
+import Author from "../models/main/Author.js";
 
 const authorData = [
     {
@@ -31,6 +31,6 @@ const authorData = [
 ]
 
 
-const seedAuthor = () => Author.bulkCreate(authorData);
+const seedAuthors = () => Author.bulkCreate(authorData);
 
-export default seedAuthor;
+export default seedAuthors;

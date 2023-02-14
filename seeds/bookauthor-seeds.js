@@ -1,4 +1,4 @@
-import BookAuthor from "../models/BookAuthor.js";
+import BookAuthor from "../models/main/BookAuthor.js";
 // import { Book } from "../models/Book.js";
 // import { Author } from "../models/Author.js";
 
@@ -25,7 +25,7 @@ const bookAuthorData = [
     },      
 ]
 
-const seedBookAuthor = () => BookAuthor.bulkCreate(bookAuthorData);
+const seedBookAuthors = () => BookAuthor.bulkCreate(bookAuthorData);
 
-export default seedBookAuthor;
+export default seedBookAuthors;
 

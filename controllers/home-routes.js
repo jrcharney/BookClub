@@ -1,8 +1,8 @@
 import { Router } from "express";
-import Comment from "../models/main_models/Comment.js";
-import User from "../models/main_models/User.js";
-import Post from "../models/main_models/Post.js";
-import Book from "../models/main_models/Book.js";
+import Comment from "../models/main/Comment.js";
+import User from "../models/main/User.js";
+import Post from "../models/club_board/Post.js";
+import Book from "../models/main/Book.js";
 import withAuth from "../utils/auth.js";
 
 const homeRoutes = Router();

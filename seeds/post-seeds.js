@@ -1,8 +1,9 @@
-import Post from "../models/main_models/Post.js"
+import Post from "../models/club_board/Post.js"
 
+// TODO: Fill this in, someday.
 const postData = []
 
 
-const seedPost = () => Post.bulkCreate(postData);
+const seedPosts = () => Post.bulkCreate(postData);
 
-export default seedPost;
+export default seedPosts;
