@@ -1,19 +1,28 @@
 import User from './User';
-import Post from './Post';
+import Author from './Author'
 import Book from './Book';
+import BookAuthor from './BookAuthor';
 import Comment from './Comment';
+
+Book.hasMany(BookAuthor,{
+  foreignKey: 'book_id'
+});
+
+Author.hasMany(BookAuthor,{
+  foreignKey: 'author_id'
+});
+
+BookAuthor.hasOne(Book,{
+  foreignKey: 'book_id'
+});
+
+BookAuthor.hasOne(Author,{
+  foreignKey: 'author_id'
+});
 
 User.hasMany(Comment, {
   foreignKey: 'user_id',
 });
-
-User.hasMany(Post, {
-    foreignKey: 'user_id',
-  });
-
-Post.belongsTo(User, {
-    foreignKey: 'user_id',
-  });
 
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
@@ -27,13 +36,4 @@ Book.hasMany(Comment, {
   foreignKey: 'book_id',
 });
 
-Post.hasMany(Book, {
-  foreignKey: 'post_id',
-});
-
-Book.belongsTo(Post, {
-  foreignKey: 'post_id',
-});
-
-
-export default { User, Post, Book, Comment };
+export default { User, Author, Book, BookAuthor, Comment };
