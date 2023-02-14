@@ -20,7 +20,22 @@ Project 2
 
 > TODO: This section is under construction. Expect a lot of items in this list.
 
-- GIVEN a BookClub website
+
+GIVEN a BookClub website
+
+- WHEN I search for a book by title,
+  - THEN I will see a page with a list of books that match my search query.
+- WHEN I search for an author,
+  - THEN I will see a page with a list of authors that match my search query.
+- WHEN I click on a title search result,
+  - THEN I will go to a book's page with an image of the book cover, a link to the author's page, comments by other users who reviewed the book, and a list of tags related to the book.
+- WHEN I click on a author search result,
+  - THEN I will go to the author's page which will list the list of books the author has written and links to those books, and a list of tags related to the author.
+- WHEN I search for a tag,
+  - THEN I will see a page with a list of books related to that tag and a list of authors related to that tag. The books and authors will go to their respective pages.
+- WHEN I click on a tag that is on either a book page or author page,
+  - THEN I will see a page with a list of books related to that tag and a list of authors related to that tag. The books and authors will go to their respective pages.
+
 - [ ] WHEN I sign up to the website
   - THEN I should check my email for verification to complete my registration.
 - [ ] WHEN I go to the settings

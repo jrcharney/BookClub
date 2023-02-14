@@ -40,15 +40,6 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
-      /*
-      post_id: {                  // NO!
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'post',
-          key: 'id',
-        },
-      },
-      */
     },
     {
         sequelize,
