@@ -4,6 +4,16 @@ import Book from './Book';
 import BookAuthor from './BookAuthor';
 import Comment from './Comment';
 
+// TODO: Need to find out where to apply `onDelete` and `onUpdate`.
+
+Author.belongsToMany(Book, {
+  through: BookAuthor
+});
+
+Book.belongsToMany(Author,{
+  through: BookAuthor
+});
+
 Book.hasMany(BookAuthor,{
   foreignKey: 'book_id'
 });

@@ -35,13 +35,14 @@ const bookData = [
         id: 5,
         title: "The Divine Comedy",
         isbn:   "9798627115764",
+        pub_year: "1320"
         //author: "Dante Allegri"
     },
     {
         id: 6,
         title: "The Girl Who Played with Fire",
         pub_year: "2006",
-        isbn: "",
+        isbn: "9780307269980",
     },
     {
         id: 7,
@@ -85,7 +86,7 @@ const bookData = [
         id: 13,
         title: "The Lord of the Rings",
         pub_year: "1954",
-        isbn: "9780544003415"
+        isbn: "9780544003415",
         description: "The Lord of the Rings is an epic high-fantasy novel divided into three volumes (The Fellowship of the Ring, The Two Towers, and The Return of the King)"
     },
     // TODO: Add more books!

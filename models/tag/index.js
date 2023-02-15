@@ -11,6 +11,14 @@ import BookTag from "./BookTag.js";
 
 // TODO: Make sure these relationships are correct
 
+Book.belongsToMany(Tag, {
+    through: BookTag
+});
+
+Tag.belongsToMany(Book,{
+    through: BookTag
+});
+
 Book.hasMany(BookTag,{
     foreignKey: 'book_id'
 });
@@ -22,6 +30,14 @@ Tag.belongsTo(BookTag,{
 });
 BookTag.hasMany(Tag,{
     foreignKey: 'tag_id'
+});
+
+Author.belongsToMany(Tag, {
+    through: AuthorTag
+});
+
+Tag.belongsToMany(Author,{
+    through: AuthorTag
 });
 
 Author.hasMany(AuthorTag,{
