@@ -4,6 +4,8 @@ import User from "../../models/main/User.js"
 
 const userRoutes = Router();
 
+// TODO: This seems incomplete.  Describe what each route does.
+
 // CREATE new user
 userRoutes.post('/', async (req, res) => {
   try {

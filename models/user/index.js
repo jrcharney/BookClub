@@ -7,11 +7,15 @@ import UserProfile from "./UserProfile.js";
 import UserSettings from "./UserSettings.js";
 
 User.hasOne(UserProfile,{
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
 });
 
 User.hasOne(UserSettings,{
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE'
 });
 
 UserProfile.belongsTo(User,{

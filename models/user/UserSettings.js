@@ -25,14 +25,17 @@ UserSettings.init(
                 key: 'id',
             }
         },
+        /*
         age_restriction: {
-            type: DataTypes.INTEGER,    // TODO: Consider making this an ENUM?
+            // TODO: How do I use ENUM?
+            type: DataTypes.INTEGER,
             // TODO: set a defaultValue, preferably based on dob/age
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
+        */
         show_real_name: {                    // Display your real name? If false, show user name only.
             type: DataTypes.BOOLEAN,
             defaultValue: false
@@ -49,6 +52,7 @@ UserSettings.init(
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        /*
         show_favorite_authors: {          // Display favorite authors?
             type: DataTypes.BOOLEAN,
             defaultValue: true
@@ -77,6 +81,7 @@ UserSettings.init(
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        */
         show_about: {          // User's autobio?
             type: DataTypes.BOOLEAN,
             defaultValue: false

@@ -2,7 +2,9 @@ import { Router } from 'express';
 import Comment from "../../models/main/Comment.js";
 import withAuth from '../../utils/auth.js';
 
-const commentRouter = Router();
+const commentRouter = new Router();
+
+// TODO: This seems incomplete. Explain what each route should do.
 
 commentRouter.get('/', (req, res) => {
     Comment.findAll({})
