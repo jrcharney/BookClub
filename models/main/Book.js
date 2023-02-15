@@ -36,9 +36,21 @@ Book.init(
           is: /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/
         }
       },
-      description: {
-        type: DataTypes.STRING,
+      pub_year: {
+        // TODO: In the future, consider a temporal type if it ever becomes available.
+        // Since there is no DataType.YEAR, we need to think of other ways to fix this.
+        type: DataTypes.STRING,  // NOTICE: STRING NOT NUMBER! SO IT MUST BE QUOTED!
         allowNull: true,
+        validate: {
+          // Let's assume that any year we enter is a value between 0 and 9999
+          is: /^\d{1,4}$/
+        }
+      },
+      description: {
+        // TEXT is longer than STRING
+        type: DataTypes.TEXT,
+        allowNull: true,
+        // TODO: What kind of validator can we use?
       },
     },
     {
