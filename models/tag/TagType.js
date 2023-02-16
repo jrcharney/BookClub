@@ -1,15 +1,15 @@
 /**
- * @file model/Tag.js
- * @desc Model for the Tag class
- * @Note Tags are almost EVERYWHERE. Think of them as keywords to attach to objects when searching.
- * @TODO Should we apply a tag search when querying objects?
+ * @file model/TagType.js
+ * @desc Model for the TagType class, describes the type of tag
+ * @note I though about using an ENUM in tag, but I wasn't sure if mysql would support that.
+ * This is more of a utility table, so users can search for things
  */
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../../config/connections.js';
 
-class Tag extends Model {}
+class TagType extends Model {}
 
-Tag.init(
+TagType.init (
     {
         id: {
             type: DataTypes.INTEGER,
@@ -17,26 +17,17 @@ Tag.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {                   // Category name
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,               // TODO: Hopefully this works. I wanted these to be unique
             validate: {
                 notEmpty: true,
-                max: 64            // Limit our tag size to 64 characters max
+                max: 32            // Limit our tag size to 32 characters max
                 // NOTE: I was going to apply a regex validator, but then I got thinking about other characters that could be used in tags.
                 // TODO: Write a better regex validator
                 // is: /^[ .a-z]+$/i,      // Validate a tag name using regular expression
             }
-        },
-        tag_type_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'tag_type',
-                key: 'id'
-            }
-            // TODO: Validate this later
         },
         description: {                    // A short tag description. (This is more VARCHAR than TEXT.)
             type: DataTypes.STRING,
@@ -48,13 +39,11 @@ Tag.init(
     },
     {
         sequelize,
-        timestamps: true,   // Enable timestamp fields. (I was hoping to do this anyway)
-        createdAt: true,    // Creates a createdAt field that will set a timestamp on record creation
-        updatedAt: true,    // Creates a updatedAt field that will update a timestamp on record update 
+        timestamps: false,          // We don't need timestamps this time around.
         freezeTableName: true,
         underscored: true,
-        modelName: 'tag'
+        modelName: 'tag_type'
     }
 );
 
-export default Tag;
+export default TagType;

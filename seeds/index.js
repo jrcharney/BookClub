@@ -1,13 +1,20 @@
 import process from "process"
 import sequelize from "../config/connections.js";
+// TODO: Group our seeds like we did with our models
+// main seeds
 import seedBooks from "./book-seeds.js";
 import seedAuthors from "./author-seeds.js";
 import seedBookAuthors from "./bookauthor-seeds.js";
 import seedUsers from "./user-seeds.js";
+import seedComments from "./comment-seeds.js";
+// user seeds
 import seedUserProfiles from "./userprofile-seeds.js";
 import seedUserSettings from "./usersettings-seeds.js";
-import seedComments from "./comment-seeds.js";
-//import seedPosts from "./post-seeds.js"
+// tag seeds
+import seedTagTypes from "./tagtype-seeds.js";
+import seedTags from './tag-seeds.js';
+import seedAuthorTags from './authortag-seeds';
+import seedBookTags from './booktag-seeds';
 
 
 const seedAll = async () => {
@@ -23,13 +30,19 @@ const seedAll = async () => {
     await seedUsers();
     console.log("\n----- USERS SEEDED -----\n");
     await seedComments();
-    console.log("\n----- USERPROFILES SEEDED -----\n");
-    await seedUserProfiles();
-    console.log("\n----- USERSETTINGS SEEDED -----\n");
-    await seedUserSettings();
     console.log("\n----- COMMENTS SEEDED -----\n");
-    //await seedPosts();
-    //console.log("\n----- POSTS SEEDED -----\n")  
+    await seedUserProfiles();
+    console.log("\n----- USERPROFILES SEEDED -----\n");
+    await seedUserSettings();
+    console.log("\n----- USERSETTINGS SEEDED -----\n");
+    await seedTagTypes();
+    console.log("\n----- TAGTYPES SEEDED -----\n");
+    await seedTags();
+    console.log("\n----- TAGS SEEDED -----\n");
+    await seedAuthorTags();
+    console.log("\n----- AUTHORTAGS SEEDED -----\n");
+    await seedBookTags();
+    console.log("\n----- BOOKTAGS SEEDED -----\n");
     console.log("\n----- END SEEDING -----\n");  
     process.exit(0);
 };
