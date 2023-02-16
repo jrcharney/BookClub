@@ -13,8 +13,8 @@ import seedUserSettings from "./usersettings-seeds.js";
 // tag seeds
 import seedTagTypes from "./tagtype-seeds.js";
 import seedTags from './tag-seeds.js';
-import seedAuthorTags from './authortag-seeds';
-import seedBookTags from './booktag-seeds';
+import seedAuthorTags from './authortag-seeds.js';
+import seedBookTags from './booktag-seeds.js';
 
 
 const seedAll = async () => {

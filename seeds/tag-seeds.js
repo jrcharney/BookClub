@@ -1,4 +1,4 @@
-import Tag from "../models/tag/Tag";
+import Tag from "../models/tag/Tag.js";
 
 // id: Integer
 // name: (required): String (unique!)
@@ -162,7 +162,7 @@ const tagData = [
     },
     {
         id: 32,
-        new: "friendship",
+        name: "friendship",
         tag_type_id: 3,
     },
 ];

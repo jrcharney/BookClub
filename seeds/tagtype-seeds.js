@@ -1,4 +1,4 @@
-import TagType from "../models/tag/TagType";
+import TagType from "../models/tag/TagType.js";
 // NOTE: I though about using an enum. This was just a better exercise.
 
 const tagTypeData = [

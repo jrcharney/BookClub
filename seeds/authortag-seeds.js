@@ -1,4 +1,4 @@
-import AuthorTag from "../models/tag/AuthorTag";
+import AuthorTag from "../models/tag/AuthorTag.js";
 
 const authorTagData = [
     {

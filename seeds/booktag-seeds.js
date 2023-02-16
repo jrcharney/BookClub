@@ -1,4 +1,4 @@
-import BookTag from "../models/tag/BookTag";
+import BookTag from "../models/tag/BookTag.js";
 
 const bookTagData = [
     {
