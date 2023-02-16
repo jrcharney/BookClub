@@ -1,19 +1,18 @@
-import User from "../models/main/User";
-import UserProfile from "../models/user/UserProfile";
+import UserProfile from "../models/user/UserProfile.js";
 
-const UserProfileData = [
+const userProfileData = [
     {
         user_id: 1,     // Joe
         first_name: "Joseph",
         last_name: "Smiley",
-        dob: "10-10-1986",
+        dob: "1986-10-10",
         location: "Kalamazoo, MI, USA"
     },
     {
         user_id: 2,     // Josh
         first_name: "Joshua",
         last_name: "Theriot",
-        dob: "07-09-2003",
+        dob: "2003-07-09",
         location: "Vancouver, BC, CAN",
         about : "Last name pronounced: Terry-Oh"
     },
@@ -21,7 +20,7 @@ const UserProfileData = [
         user_id: 3,     // Sven
         first_name: "Sven",
         last_name: "Erikson",
-        dob: "09-19-1990",
+        dob: "1990-09-19",
         location: "Stockholm, SWE",
         about: "I know six languages: English, Swedish, Danish, German, Norwegian, and Finnish."
     },
@@ -29,22 +28,26 @@ const UserProfileData = [
         user_id: 4,     // Emily
         first_name: "Emily",
         last_name: "Weiss-Fielding",
-        dob: "02-22-1968",
+        dob: "1968-02-22",
         location: "Boston, MA, USA"
     },
     {
         user_id: 5,     // Jackie
         first_name: "Jackie",
         last_name: "Carmichael",
-        dob: "05-07-2006",
+        dob: "2006-05-07",
         location: "Henderson, NV, USA"
     },
     {
         user_id: 6,     // Barnabas
         first_name: "Barnabas",
         last_name: "Konstantine",
-        dob: "04-19-1992",
+        dob: "1992-04-19",
         location: "Irving, TX, USA",
         about: "Read banned books!"
     }
 ];
+
+const seedUserProfiles = () => UserProfile.bulkCreate(userProfileData);
+
+export default seedUserProfiles;

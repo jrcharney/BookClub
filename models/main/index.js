@@ -23,15 +23,21 @@ Author.hasMany(BookAuthor,{
 });
 
 BookAuthor.hasOne(Book,{
-  foreignKey: 'book_id'
+  foreignKey: 'book_id',
+  //onUpdate: 'CASCADE',    // I don't think we need this
+  onDelete: 'CASCADE'       // But we do need this.
 });
 
 BookAuthor.hasOne(Author,{
-  foreignKey: 'author_id'
+  foreignKey: 'author_id',
+  //onUpdate: 'CASCADE',    // I don't think we need this
+  onDelete: 'CASCADE'       // But we do need this.
 });
 
 User.hasMany(Comment, {
   foreignKey: 'user_id',
+  //onUpdate: 'CASCADE',    // I don't think we need this
+  onDelete: 'CASCADE'       // But we do need this.
 });
 
 Comment.belongsTo(User, {

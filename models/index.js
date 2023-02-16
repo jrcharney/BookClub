@@ -18,13 +18,13 @@ import {Author, Book, BookAuthor, Comment, User} from "./main";
 //import * as ClubList from "./club_list"
 //import * as Family from "./family"
 //import * as Friend from "./friend"
-import {Tag, AuthorTag, BookTag} from "./tag"
+//import {Tag, AuthorTag, BookTag} from "./tag"         // WISHLIST: Tag system
 import {UserProfile, UserSettings} from "./user"
 //import * as UserBookList from "user_book_list"
 //import * as UserFavorite from "user_favorite"
 
 export default {
     Author, Book, BookAuthor, Comment, User,
-    Tag, AuthorTag, BookTag,
+    //Tag, AuthorTag, BookTag,
     UserProfile, UserSettings
 }

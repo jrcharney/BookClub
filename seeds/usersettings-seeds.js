@@ -1,5 +1,4 @@
-import User from "../models/main/User";
-import UserSettings from "../models/user/UserSettings";
+import UserSettings from "../models/user/UserSettings.js";
 
 const userSettingsData = [
     {
@@ -52,3 +51,7 @@ const userSettingsData = [
         show_about: true,
     }
 ];
+
+const seedUserSettings = () => UserSettings.bulkCreate(userSettingsData);
+
+export default seedUserSettings;
