@@ -28,6 +28,10 @@ authorRouter.get('/author/:id/books', (req,res) => {
     // TODO: List all the books an author has written
 });
 
+authorRouter.get('/author/:id/tags', (req, res) => {
+    // TODO: List all the tags associated with an author
+});
+
 /* Only users who are logged in and with permitted access can modify the database */
 
 authorRouter.post('/author/', withAuth, (req,res) => {
